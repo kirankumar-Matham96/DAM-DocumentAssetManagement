@@ -49,7 +49,13 @@ class RegisterUser {
 			return callback(error, null);
 		}
 	};
-
+	usersList = (callback) => {
+		schema.find({}, (error, data) => {
+			return error
+				? callback("Couldn't fetch the data from the database!", null)
+				: callback(null, data);
+		});
+	};
 	loginUser = (userData, callback) => {
 		schema.findOne({ email: userData.email }, (error, data) => {
 			return error
