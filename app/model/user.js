@@ -80,5 +80,5 @@ class RegisterUser {
 	};
 }
 
-module.exports = mongoose.model('userSchemaModel', userSchema);
+module.exports = mongoose.model('userSchemaModel', userSchema); //TODO:try to comment this line and check if it works the same.
 module.exports = new RegisterUser();

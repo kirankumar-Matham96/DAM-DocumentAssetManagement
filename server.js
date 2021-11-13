@@ -2,9 +2,11 @@ const { urlencoded } = require('express');
 const express = require('express');
 require('dotenv').config();
 const connectToDatabase = require('./config/databaseConnection');
+const CORS = require('cors');
 
 const app = express();
 
+app.use(CORS());
 app.use(express.json());
 app.use(urlencoded({ extended: true }));
 
